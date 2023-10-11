@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgb(118, 202, 185), rgb(35, 44, 59));
+    background: #222222;
 }
   
 line {
