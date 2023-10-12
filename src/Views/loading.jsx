@@ -33,25 +33,4 @@ export default function Loading() {
       {message ? (<h1 style={{color: "white"}}>{mes}</h1>):null}
     </div>
     );
-} 
-
-/*Borrar
-const [showComponent1, setShowComponent1] = useState(false);
-  useEffect(() => {
-    // Navegar a MainPage después de la animación
-    const timeoutId = setTimeout(() => {
-      setShowComponent1(true);
-    }, 10000); // Ajusta el tiempo según la duración de tu animación
-
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  return (
-    <div className="App" style={{ background: showComponent1 ? 'white' : 'gray' }}>
-      {showComponent1 ? 
-      (<MainPage/>):
-      (<Loading/>)
-      }
-    </div>
-  );
-*/ 
+}
