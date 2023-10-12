@@ -1,7 +1,7 @@
 import "./LoadingAnim.css";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {Routes, Route, useNavigate} from "react-router-dom"
+import {Routes, Route, } from "react-router-dom"
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -19,6 +19,7 @@ const draw = {
 };
 
 export default function LoadingAnim() {
+    //const navigate = useNavigate();
     //Button
 
     const [showButton, setShowButton] = useState(false);
@@ -26,6 +27,7 @@ export default function LoadingAnim() {
     function handleButtonClick(){
         console.log(1)
         console.log(showButton)
+        //navigate("/MainPage", { replace: true });
     }
 
     //Animation
@@ -33,9 +35,10 @@ export default function LoadingAnim() {
     var numLetra = 0;
     return (
         <div>
+            {/*Puede ser 1000X800*/ }
         <motion.svg
-            width="1000"
-            height="800"
+            width="100%"
+            height="100%"
             viewBox="0 0 1000 800"
             initial="hidden"
             animate="visible"
