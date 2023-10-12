@@ -10,6 +10,7 @@ export default function Loading() {
     var mes = "";
     Math.floor(Math.random() * 2) == 1 ? mes = "SUCCESS": mes="ERROR";
 
+    /*
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setLoading(false);
@@ -18,11 +19,22 @@ export default function Loading() {
         }, 10000);
     
         return () => clearTimeout(timeoutId);
-      }, []);
+      }, []);*/
+
+    function handleAnimation(){
+        const timeoutId = setTimeout(() => {
+            setLoading(false);
+            setMessage(true);
+
+        }, 10000);
+    
+        return () => clearTimeout(timeoutId);
+    }
 
     function handleButton(){
         setButton(false);
         setLoading(true);
+        handleAnimation();
     }
 
     return(
