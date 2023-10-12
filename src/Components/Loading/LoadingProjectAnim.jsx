@@ -319,6 +319,68 @@ export default function LoadingProjectAnim() {
             variants={draw}
             custom={7}
         />
+        {/*BY EN*/}
+        <motion.line
+                x1={800 + numLetra * stroke}
+                y1={600 + stroke}
+                x2={825 + numLetra * stroke}
+                y2={600 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
+            <motion.line
+                x1={800 + numLetra * stroke}
+                y1={625 + stroke}
+                x2={825 + numLetra * stroke}
+                y2={625 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
+            <motion.line
+                x1={800 + numLetra * stroke}
+                y1={650 + stroke}
+                x2={825 + numLetra * stroke}
+                y2={650 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
+
+            <motion.line
+                x1={825 + numLetra * stroke}
+                y1={600 + stroke}
+                x2={825 + numLetra * stroke}
+                y2={650 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
+            <motion.line
+                x1={825 + numLetra * stroke}
+                y1={650 + stroke}
+                x2={850 + numLetra * stroke}
+                y2={600 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
+            <motion.line
+                x1={850 + numLetra * stroke}
+                y1={600 + stroke}
+                x2={850 + numLetra * stroke}
+                y2={650 + stroke}
+                stroke="#ff5100"
+                variants={draw}
+                custom={10}
+                style={{strokeWidth: "5px"}}
+            />
         
          
            
