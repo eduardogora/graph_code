@@ -37,8 +37,8 @@ export default function LoadingAnim() {
         <div>
             {/*Puede ser 1000X800*/ }
         <motion.svg
-            width="100%"
-            height="100%"
+            width="1000"
+            height="450"
             viewBox="0 0 1000 800"
             initial="hidden"
             animate="visible"
@@ -233,7 +233,7 @@ export default function LoadingAnim() {
                 y1="100"
                 x2={500 + numLetra * stroke}
                 y2="100"
-                stroke="#4791ff"
+                stroke="#70d95b"
                 variants={draw}
                 custom={5}
             />
@@ -242,7 +242,7 @@ export default function LoadingAnim() {
                 y1="200"
                 x2={500 + numLetra * stroke}
                 y2="200"
-                stroke="#4791ff"
+                stroke="#70d95b"
                 variants={draw}
                 custom={5}
             />
@@ -251,7 +251,7 @@ export default function LoadingAnim() {
                 y1="100"
                 x2={400 + numLetra * stroke}
                 y2="300"
-                stroke="#4791ff"
+                stroke="#70d95b"
                 variants={draw}
                 custom={5}
             />
@@ -260,7 +260,7 @@ export default function LoadingAnim() {
                 y1="100"
                 x2={500 + numLetra * stroke}
                 y2="200"
-                stroke="#4791ff"
+                stroke="#70d95b"
                 variants={draw}
                 custom={5}
             />
