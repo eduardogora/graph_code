@@ -40,9 +40,9 @@ export default function Loading() {
     return(
         //<LoadingAnim/>
     <div className="App" >
-      {button ? (<Button type="primary" size="Large" onClick={handleButton} > Start </Button>):null}
+      {button ? (<Button type="primary" size="Large" onClick={handleButton} style={{backgroundColor: "white", color: "black"}}> Start </Button>):null}
       {loading ? (<LoadingProjectAnim/>):null}
-      {message ? (<h1 style={{color: "white"}}>{mes}</h1>):null}
+      {message ? (<h1 style={{color: "white", fontWeight: "8"}}>{mes}</h1>):null}
     </div>
     );
 }
