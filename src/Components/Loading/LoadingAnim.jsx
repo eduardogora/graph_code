@@ -34,7 +34,7 @@ export default function LoadingAnim() {
     const stroke = 15;
     var numLetra = 0;
     return (
-        <div>
+        <div className="anim1">
             {/*Puede ser 1000X800*/ }
         <motion.svg
             width="1000"

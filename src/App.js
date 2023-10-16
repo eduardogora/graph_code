@@ -17,11 +17,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App" style={{ background: showComponent1 ? 'white' : 'gray' }}>
-      {showComponent1 ? 
+    <div className="App">
+      {/*showComponent1 ? 
       (<MainPage/>):
       (<Loading/>)
-      }
+  */}
+    {<MainPage/>}
     </div>
   );
 }

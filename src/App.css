@@ -1,18 +1,11 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-image: linear-gradient(to bottom, rgb(118, 202, 185), rgb(35, 44, 59));
+  min-height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
