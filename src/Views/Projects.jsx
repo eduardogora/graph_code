@@ -19,8 +19,6 @@ export default function Projects({data}) {
     const [currentData, setCurrentData] = useState(data.team);
     
     const [value, setValue] = useState(1);
-    const max = 2;
-    const min = 0;
     
     const marks = {
         0: "Art",
@@ -29,12 +27,18 @@ export default function Projects({data}) {
     };
 
     const handleSelection = (e) => {
-        console.log('click ', e.key);
         setCurrentUser(e.key);
-        setCurrentData(data[e.key]);
+        if(e.key == 0){
+            setCurrentData(data.eduardo)
+        }
+        if(e.key == 1){
+            setCurrentData(data.team)
+        }
+        if(e.key == 2){
+            setCurrentData(data.natalia)
+        }
+        ;
       };
-
-      console.log(currentData)
 
     return(
         <div>
@@ -55,7 +59,7 @@ export default function Projects({data}) {
             </div>
             <Row>
             {value !== 1 ? (
-                currentData.projects.map((project) => (
+                currentData.map((project) => (
                 project.category == value ? ( 
                 <Col key={project.title} span={4}>
                     <Project_Card data={project}/>
@@ -75,22 +79,3 @@ export default function Projects({data}) {
         </div>
     )
 }
-
-/*
-{value === 0 ? (
-                data.projects.map((project) => (
-                project.category == value ? ( 
-                <Col key={project.title} span={4}>
-                    <Project_Card data={project}/>
-                </Col>) 
-                : null
-            ))
-            )
-            : (
-                data.projects.map((project) => (
-                <Col key={project.title} span={4}>
-                    <Project_Card data={project}/>
-                </Col>
-                
-            )))}
-*/

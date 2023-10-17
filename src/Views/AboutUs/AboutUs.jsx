@@ -21,16 +21,16 @@ export default function AboutUs({data}) {
     const handleSelection = (e) => {
         setCurrentUser(e.key);
         if(e.key == 0){
-          setCurrentInfo(data2.eduardo)
+          setCurrentInfo(data.eduardo)
           setIndicatorsData(CurrentInfo.tech)
         }
         if(e.key == 1){
-          setCurrentInfo(data2.team)
+          setCurrentInfo(data.team)
           setIndicatorsData(CurrentInfo.tech)
         }
         if(e.key == 2){
           
-          setCurrentInfo(data2.natalia)
+          setCurrentInfo(data.natalia)
           setIndicatorsData(CurrentInfo.tech)
         }
         
@@ -47,13 +47,13 @@ export default function AboutUs({data}) {
         setIndicatorName("Art")
       }
       if(currentUser == 0){
-        params ? setIndicatorsData(data2.eduardo.indicators.tech) : setIndicatorsData(data2.eduardo.indicators.art)
+        params ? setIndicatorsData(data.eduardo.indicators.tech) : setIndicatorsData(data.eduardo.indicators.art)
       }
       if(currentUser == 1){
-        params ? setIndicatorsData(data2.team.indicators.tech) : setIndicatorsData(data2.team.indicators.art)
+        params ? setIndicatorsData(data.team.indicators.tech) : setIndicatorsData(data.team.indicators.art)
       }
       if(currentUser == 2){
-        params ? setIndicatorsData(data2.natalia.indicators.tech) : setIndicatorsData(data2.natalia.indicators.art)
+        params ? setIndicatorsData(data.natalia.indicators.tech) : setIndicatorsData(data.natalia.indicators.art)
       }
     }
 
@@ -75,39 +75,10 @@ export default function AboutUs({data}) {
       { name: 'Name 2', max: 10 },
       { name: 'Name 3', max: 10 }
     ];
-
-    const data2 = {eduardo: {
-                      indicators: {art: [[5, 5, 5, 5, 5, 5,]], tech: [[6, 6, 6, 6, 6, 6,]]},
-                      links: {facebook: "https://www.apple.com",
-                              linkedin: "https://www.apple.com",
-                              instagram: "https://www.apple.com",
-                              github: "https://www.apple.com"
-                              }
-                    
-                    }, 
-                    team: {
-                      indicators: {art: [[10, 10, 10, 10, 10, 10,]], tech: [[10, 10, 10, 10, 10, 10,]]},
-                      links: {facebook: "https://www.google.com",
-                              linkedin: "https://www.google.com",
-                              instagram: "https://www.google.com",
-                              github: "https://www.google.com"
-                              }
-                    },
-                    natalia: {
-                        indicators: {art: [[8, 8, 8, 8, 8, 8,]], tech: [[9, 9, 9, 9, 9, 9,]]},
-                        links: {facebook: "https://www.youtube.com",
-                                linkedin: "https://www.youtube.com",
-                                instagram: "https://www.youtube.com",
-                                github: "https://www.youtube.com"
-                                }
-                    }
-                }
-
-
-
+    
       const [currentUser, setCurrentUser] = useState('1');
-      const [CurrentInfo, setCurrentInfo] = useState(data2.team);
-      const [indicatorsData, setIndicatorsData] = useState(data2.team.indicators.art);
+      const [CurrentInfo, setCurrentInfo] = useState(data.team);
+      const [indicatorsData, setIndicatorsData] = useState(data.team.indicators.art);
       const [indicatorName, setIndicatorName] = useState("Art");
       const [color, setColor] = useState("#F9713C");
       const [CurrentIndicators, setCurrentIndicators] = useState(artIndicators);

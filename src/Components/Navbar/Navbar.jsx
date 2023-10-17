@@ -30,9 +30,10 @@ export default function Navbar({handleSelection}) {
                     <Menu.Item key="projects" className="navbar-button" onClick={() => handleSelection(2)}>
                         <h1>Projects</h1>
                     </Menu.Item>
+                    {/*
                     <Menu.Item key="contact" className="navbar-button" onClick={() => handleSelection(3)}>
                         <h1>Contact</h1>
-                    </Menu.Item>
+                    </Menu.Item>*/}
                 </Menu>
             </Col>
 
