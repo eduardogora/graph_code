@@ -1,7 +1,7 @@
 import {motion} from "framer-motion"
 import { useState } from "react"
 import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, } from '@ant-design/icons';
-import { Slider, Row, Col, Card, Image, Carousel, FloatButton, Switch  } from 'antd';
+import { Slider, Row, Col, Card, Image, Carousel, FloatButton, Switch, Affix  } from 'antd';
 import Person_Navbar from "../../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -186,9 +186,14 @@ export default function AboutUs({data}) {
     
     return(
         <div>
-            <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
 
-            <Card style={{margin: "50px"}}>
+        <div style={{position: "fixed", width: "100%", zIndex: "1000", marginTop:"-100px"}}>
+            <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
+        </div>
+        
+        <div>
+
+            <Card style={{margin: "100px 50px 50px 50px"}}>
                 <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
                 <Card.Grid style={{width: "50%"}}>
                     <Image  
@@ -207,20 +212,6 @@ export default function AboutUs({data}) {
                 
                 <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
             </Card>
-            <Carousel autoplay>
-                <div>
-                <h3 className="content-style" >1</h3>
-                </div>
-                <div>
-                <h3 className="content-style">2</h3>
-                </div>
-                <div>
-                <h3 className="content-style">3</h3>
-                </div>
-                <div>
-                <h3 className="content-style">4</h3>
-                </div>
-            </Carousel>
 
             <FloatButton.Group
                 trigger="hover"
@@ -251,6 +242,22 @@ export default function AboutUs({data}) {
                 <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
             </Card>
             
+            <Carousel autoplay>
+                <div>
+                <h3 className="content-style" >1</h3>
+                </div>
+                <div>
+                <h3 className="content-style">2</h3>
+                </div>
+                <div>
+                <h3 className="content-style">3</h3>
+                </div>
+                <div>
+                <h3 className="content-style">4</h3>
+                </div>
+            </Carousel>
+            
         </div>
+      </div>
     )
 }
