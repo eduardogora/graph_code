@@ -1,11 +1,11 @@
 import {motion} from "framer-motion"
 import { useState } from "react"
-import { FrownOutlined, CustomerServiceOutlined } from '@ant-design/icons';
-import { Slider, Row, Col, Card, Image, Carousel, FloatButton  } from 'antd';
+import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, } from '@ant-design/icons';
+import { Slider, Row, Col, Card, Image, Carousel, FloatButton, Switch  } from 'antd';
 import Person_Navbar from "../../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
-import { Padding } from "@mui/icons-material";
+import {Padding } from "@mui/icons-material";
 import Project_Card from "../../Components/Project_Card/Project_Card";
 import "./AboutUs.css";
 import ReactECharts from 'echarts-for-react';
@@ -17,120 +17,171 @@ export default function AboutUs({data}) {
     /*
     Category - 0 -Art | 1 - Both | 2 - Art
     */
-    const handleSelection = (e) => {
-        console.log('click ', e.key);
-        setCurrentUser(e.key);
-      };
-    
-    const [currentUser, setCurrentUser] = useState('1');
 
+    const handleSelection = (e) => {
+        setCurrentUser(e.key);
+        if(e.key == 0){
+          setCurrentInfo(data2.eduardo)
+          setIndicatorsData(CurrentInfo.tech)
+        }
+        if(e.key == 1){
+          setCurrentInfo(data2.team)
+          setIndicatorsData(CurrentInfo.tech)
+        }
+        if(e.key == 2){
+          
+          setCurrentInfo(data2.natalia)
+          setIndicatorsData(CurrentInfo.tech)
+        }
+        
+      };
+
+    const handleIndicatorsChange = (params) => {
+      if(params){
+        setCurrentIndicators(techIndicators)
+        setColor("#B3E4A1")
+        setIndicatorName("Tech")
+      }else{
+        setCurrentIndicators(artIndicators);
+        setColor("#F9713C")
+        setIndicatorName("Art")
+      }
+      if(currentUser == 0){
+        params ? setIndicatorsData(data2.eduardo.indicators.tech) : setIndicatorsData(data2.eduardo.indicators.art)
+      }
+      if(currentUser == 1){
+        params ? setIndicatorsData(data2.team.indicators.tech) : setIndicatorsData(data2.team.indicators.art)
+      }
+      if(currentUser == 2){
+        params ? setIndicatorsData(data2.natalia.indicators.tech) : setIndicatorsData(data2.natalia.indicators.art)
+      }
+    }
+
+    
+    const artIndicators = [
+      { name: 'Poetry', max: 10 },
+      { name: 'Art', max: 10 },
+      { name: 'Literature', max: 10 },
+      { name: 'Photography', max: 10 },
+      { name: 'Painting', max: 10 },
+      { name: 'Music', max: 10 }
+    ];
+
+    const techIndicators = [
+      { name: 'Coding', max: 10 },
+      { name: 'Adobe', max: 10 },
+      { name: '3D modeling', max: 10 },
+      { name: 'Name 1', max: 10 },
+      { name: 'Name 2', max: 10 },
+      { name: 'Name 3', max: 10 }
+    ];
+
+    const data2 = {eduardo: {
+                      indicators: {art: [[5, 5, 5, 5, 5, 5,]], tech: [[6, 6, 6, 6, 6, 6,]]},
+                      links: {facebook: "https://www.apple.com",
+                              linkedin: "https://www.apple.com",
+                              instagram: "https://www.apple.com",
+                              github: "https://www.apple.com"
+                              }
+                    
+                    }, 
+                    team: {
+                      indicators: {art: [[10, 10, 10, 10, 10, 10,]], tech: [[10, 10, 10, 10, 10, 10,]]},
+                      links: {facebook: "https://www.google.com",
+                              linkedin: "https://www.google.com",
+                              instagram: "https://www.google.com",
+                              github: "https://www.google.com"
+                              }
+                    },
+                    natalia: {
+                        indicators: {art: [[8, 8, 8, 8, 8, 8,]], tech: [[9, 9, 9, 9, 9, 9,]]},
+                        links: {facebook: "https://www.youtube.com",
+                                linkedin: "https://www.youtube.com",
+                                instagram: "https://www.youtube.com",
+                                github: "https://www.youtube.com"
+                                }
+                    }
+                }
+
+
+
+      const [currentUser, setCurrentUser] = useState('1');
+      const [CurrentInfo, setCurrentInfo] = useState(data2.team);
+      const [indicatorsData, setIndicatorsData] = useState(data2.team.indicators.art);
+      const [indicatorName, setIndicatorName] = useState("Art");
+      const [color, setColor] = useState("#F9713C");
+      const [CurrentIndicators, setCurrentIndicators] = useState(artIndicators);
+    
+                     
     //Aptitudes
-    const dataBJ = [[55, 9, 56, 0.46, 18, 6, 1]];
-const dataGZ = [[26, 37, 27, 1.163, 27, 13, 1]];
-const dataSH = [[91, 45, 125, 0.82, 34, 23, 1]];
-const lineStyle = {
-  width: 1,
-  opacity: 0.5
-};
-var option = {
-  backgroundColor: '#161627',
-  title: {
-    text: 'AQI - Radar',
-    left: 'center',
-    textStyle: {
-      color: '#eee'
-    }
-  },
-  legend: {
-    bottom: 5,
-    data: ['Beijing', 'Shanghai', 'Guangzhou'],
-    itemGap: 20,
-    textStyle: {
-      color: '#fff',
-      fontSize: 14
-    },
-    selectedMode: 'single'
-  },
-  radar: {
-    indicator: [
-      { name: 'AQI', max: 300 },
-      { name: 'PM2.5', max: 250 },
-      { name: 'PM10', max: 300 },
-      { name: 'CO', max: 5 },
-      { name: 'NO2', max: 200 },
-      { name: 'SO2', max: 100 }
-    ],
-    shape: 'circle',
-    splitNumber: 5,
-    axisName: {
-      color: 'rgb(238, 197, 102)'
-    },
-    splitLine: {
-      lineStyle: {
-        color: [
-          'rgba(238, 197, 102, 0.1)',
-          'rgba(238, 197, 102, 0.2)',
-          'rgba(238, 197, 102, 0.4)',
-          'rgba(238, 197, 102, 0.6)',
-          'rgba(238, 197, 102, 0.8)',
-          'rgba(238, 197, 102, 1)'
-        ].reverse()
-      }
-    },
-    splitArea: {
-      show: false
-    },
-    axisLine: {
-      lineStyle: {
-        color: 'rgba(238, 197, 102, 0.5)'
-      }
-    }
+    const lineStyle = {
+      width: 1,
+      opacity: 0.5
+    };
+    var option = {
+      backgroundColor: '#161627',
+      title: {
+        text: 'Aptitudes',
+        left: 'center',
+        textStyle: {
+          color: '#eee'
+        }
+      },
+      legend: {
+        bottom: 5,
+        data: [indicatorName,],
+        itemGap: 20,
+        textStyle: {
+          color: '#fff',
+          fontSize: 14
+        },
+        selectedMode: 'single'
+      },
+      radar: {
+        indicator: CurrentIndicators,
+        //shape: 'circle',
+        splitNumber: 5,
+        axisName: {
+          color: 'rgb(238, 197, 102)'
+        },
+        splitLine: {
+          lineStyle: {
+            color: [
+              'rgba(238, 197, 102, 0.1)',
+              'rgba(238, 197, 102, 0.2)',
+              'rgba(238, 197, 102, 0.4)',
+              'rgba(238, 197, 102, 0.6)',
+              'rgba(238, 197, 102, 0.8)',
+              'rgba(238, 197, 102, 1)'
+            ].reverse()
+          }
+        },
+        splitArea: {
+          show: false
+        },
+        axisLine: {
+          lineStyle: {
+            color: 'rgba(238, 197, 102, 0.5)'
+          }
+        }
   },
   series: [
     {
-      name: 'Beijing',
+      name: indicatorName,
       type: 'radar',
       lineStyle: lineStyle,
-      data: dataBJ,
+      data: indicatorsData,
       symbol: 'none',
       itemStyle: {
-        color: '#F9713C'
+        color: color
       },
       areaStyle: {
         opacity: 0.1
-      }
-    },
-    {
-      name: 'Shanghai',
-      type: 'radar',
-      lineStyle: lineStyle,
-      data: dataSH,
-      symbol: 'none',
-      itemStyle: {
-        color: '#B3E4A1'
       },
-      areaStyle: {
-        opacity: 0.05
-      }
     },
-    {
-      name: 'Guangzhou',
-      type: 'radar',
-      lineStyle: lineStyle,
-      data: dataGZ,
-      symbol: 'none',
-      itemStyle: {
-        color: 'rgb(238, 197, 102)'
-      },
-      areaStyle: {
-        opacity: 0.05
-      }
-    }
   ]
 };
 
-
-    
     //EndAptitudes
     
     return(
@@ -175,27 +226,30 @@ var option = {
                 trigger="hover"
                 type="primary"
                 style={{ right: 24 }}
-                icon={<CustomerServiceOutlined />}
+                icon={<MessageOutlined />}
                 >
-                <FloatButton />
-                <FloatButton icon={<CustomerServiceOutlined />} />
+                <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank"/>
+                <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank"/>
+                <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank"/>
+                <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank"/>
             </FloatButton.Group>
 
             <Card style={{margin: "50px"}}>
                 <Card.Grid style={{width: "50%"}}>
-                <ReactECharts  
-                option={option}
-                style={{ height: '400px' }}
-                />
+                  <ReactECharts  
+                  option={option}
+                  style={{ height: '500px' }}
+                  />
+                  <div className="icon-wrapper" style={{display: 'flex', justifyContent: 'center'}}>
+                    <BrushIcon style={{margin: "10px 10px 0px 0px"}}/>
+                      <Switch onChange={handleIndicatorsChange} style={{marginTop: "10px"}}/>
+                    <ComputerIcon style={{margin: "10px 0px 0px 10px"}}/>
+
+                  </div>
                 </Card.Grid>
                 
                 <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
             </Card>
-
-
-
-            
-            
             
         </div>
     )
