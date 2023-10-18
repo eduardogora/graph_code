@@ -1,9 +1,12 @@
-import { Menu, Affix, Col, Form, Input, Button, Card } from "antd"
+import { Menu, Affix, Col, Form, Input, Button, Card, message } from "antd"
 import { useState } from "react";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import logo from "../../Resources/Images/logo.png"
 
 export default function BottomCard() {
+    const [form] = Form.useForm();
+    const [messageApi, contextHolder] = message.useMessage();
+
     const layout = {
         labelCol: {
           span: 8,
@@ -12,6 +15,10 @@ export default function BottomCard() {
           span: 16,
         },
       };
+
+    const successMessage = () => {
+        message.success('Mail Sended Correctly');
+    };
 
     const validateMessages = {
         required: '${label} is required!',
@@ -25,7 +32,8 @@ export default function BottomCard() {
       };
 
     const onFinish = (values) => {
-        console.log(values);
+        form.resetFields();
+        successMessage()
       };
 
     return(
@@ -51,11 +59,12 @@ export default function BottomCard() {
                         onFinish={onFinish}
                         style={{ maxWidth: 600 }}
                         validateMessages={validateMessages}
+                        form={form}
                     >
                         <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
                         <Input />
                         </Form.Item>
-                        <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
+                        <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email', required: true }]}>
                         <Input />
                         </Form.Item>
                         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
