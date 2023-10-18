@@ -187,13 +187,15 @@ export default function AboutUs({data}) {
             <FloatButton.Group
                 trigger="hover"
                 type="primary"
-                style={{ right: 24 }}
+                style={{ right: 24}}
                 icon={<MessageOutlined />}
+                /*description={currentUser === "0" ? "Eduard" : currentUser === '1' ? "EN" : "Natalia"}*/
+      
                 >
-                <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank"/>
-                <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank"/>
-                <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank"/>
-                <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank"/>
+                <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank" tooltip="Linkedin"/>
+                <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Facebook"/>
+                <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank" tooltip="Instagram"/>
+                <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank" tooltip="Github"/>
             </FloatButton.Group>
 
             <Card style={{margin: "50px"}}>

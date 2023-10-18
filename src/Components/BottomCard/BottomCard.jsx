@@ -1,7 +1,8 @@
 import { Menu, Affix, Col, Form, Input, Button, Card, message } from "antd"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import logo from "../../Resources/Images/logo.png"
+import emailjs from '@emailjs/browser';
 
 export default function BottomCard() {
     const [form] = Form.useForm();
@@ -20,6 +21,10 @@ export default function BottomCard() {
         message.success('Mail Sended Correctly');
     };
 
+    const errorMessage = () => {
+      message.error('Mail not sended');
+  };
+
     const validateMessages = {
         required: '${label} is required!',
         types: {
@@ -31,9 +36,22 @@ export default function BottomCard() {
         },
       };
 
+    useEffect(() => emailjs.init("irsYpC14MTfxGjhcf"), []);
+
     const onFinish = (values) => {
         form.resetFields();
-        successMessage()
+
+        try {
+          emailjs.send("service_upy9cye", 'template_ra7dcxd', {
+           to_name: values.user.name, 
+           email: values.user.email
+          });
+          successMessage();
+        } catch (error) {
+          console.log(error);
+        }
+
+        
       };
 
     return(
@@ -45,7 +63,7 @@ export default function BottomCard() {
                 </Card.Grid>
 
                 <Card.Grid style={{width: "50%"}}>
-                    Ingresar Aqui la info
+                    <h1 style={{textAlign: "center"}}>Get in contact with us</h1>
                 </Card.Grid>
 
                 <Card.Grid style={{width: "50%"}}>

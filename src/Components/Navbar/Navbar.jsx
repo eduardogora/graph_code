@@ -21,14 +21,14 @@ export default function Navbar({handleSelection}) {
                     <Menu.Item key="logo" style={{width:"10%"}} onClick={() => handleSelection(0)}>
                         <img src={logo} className="logo" style={{width: "50%"}}></img>
                     </Menu.Item>
-                    <Menu.Item key="name" disabled="true" style={{width:"45%"}}>
+                    <Menu.Item key="name" disabled="true" style={{width:"40%"}}>
                         <h1 style={{textAlign: "center"}}>GRAPH CODE</h1>
                     </Menu.Item>
-                    <Menu.Item key="about-us" className="navbar-button" onClick={() => handleSelection(1)}>
-                        <h1>About Us</h1>
+                    <Menu.Item key="about-us" style={{width:"20%"}} onClick={() => handleSelection(1)}>
+                        <h1 style={{textAlign: "center"}}>About Us</h1>
                     </Menu.Item>
-                    <Menu.Item key="projects" className="navbar-button" onClick={() => handleSelection(2)}>
-                        <h1>Projects</h1>
+                    <Menu.Item key="projects" style={{width:"20%"}} onClick={() => handleSelection(2)}>
+                        <h1 style={{textAlign: "center"}}>Projects</h1>
                     </Menu.Item>
                     {/*
                     <Menu.Item key="contact" className="navbar-button" onClick={() => handleSelection(3)}>
