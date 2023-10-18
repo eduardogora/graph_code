@@ -4,6 +4,7 @@ import LoadingAnim from "../Components/Loading/LoadingAnim"
 import Navbar from "../Components/Navbar/Navbar"
 import Projects from "./Projects";
 import AboutUs from "./AboutUs/AboutUs";
+import Home from "./Home/Home";
 
 export default function MainPage() {
 
@@ -44,7 +45,7 @@ export default function MainPage() {
     return(
         <div>
         <Navbar handleSelection = {handleSelection}/>
-        {currentSection == 0 ? (<h1>Main Page</h1>) : null}
+        {currentSection == 0 ? (<Home/>) : null}
         {currentSection == 1 ? (<AboutUs/>) : null}
         {currentSection == 2 ? (<Projects data={data}/>) : null}
         {currentSection == 3 ? (<h1>Contact</h1>) : null}
