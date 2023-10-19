@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
+import { LinkedinOutlined, AlertOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
 import { Card, Image, Carousel, FloatButton, Switch } from 'antd';
 import Person_Navbar from "../../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
@@ -208,7 +208,7 @@ export default function AboutUs({data}) {
           
                     >
                     <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank" tooltip="Linkedin"/>
-                    <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Facebook"/>
+                    <FloatButton icon={<AlertOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Extra"/>
                     <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank" tooltip="Instagram"/>
                     <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank" tooltip="Github"/>
                     <FloatButton icon={<UserOutlined />} href={CurrentInfo.links.cv} target="_blank" tooltip="CV"/>
