@@ -12,7 +12,7 @@ import Parallax from "../../Components/Parallax/Paralax";
 import headerHome from "../../Resources/Images/headerHome.png"
 import { right } from "@popperjs/core";
 
-export default function Home({data},{handleSelection}){
+export default function Home(){
     
     const [currentSection, setCurrentSection] = useState(0);
     return(

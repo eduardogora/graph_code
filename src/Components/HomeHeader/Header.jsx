@@ -14,7 +14,6 @@ export default function Header(){
                 <div className='main_header-right'>
                     <header className='main_header-img'>
                         <Image src={headerHome} className='MainHeader' alt="Header img" width={400}/>
-                        <Button type="dashed" shape="round" className="text2">Explore</Button>
                     </header>
                 </div>
             </div>

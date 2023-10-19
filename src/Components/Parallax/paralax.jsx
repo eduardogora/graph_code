@@ -19,7 +19,7 @@ const Parallax = ({ image, parNum }) => {
           duration={500}
           className="scroll-down-button"
         >
-          {parNum !== 1 ? <Button> {parNum == 2 ? <UpOutlined/> : <DownOutlined/>} </Button> : null}
+          {parNum !== 1 ? <Button className="scroll-down-button"> {parNum == 2 ? <UpOutlined/> : <DownOutlined/>} </Button> : null}
           
         </Link>
     </div>

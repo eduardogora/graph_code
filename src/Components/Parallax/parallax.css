@@ -26,3 +26,9 @@
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
+
+  .scroll-down-button{
+    position: absolute;
+    right: 50%;
+    bottom: 10%;
+}
