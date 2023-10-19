@@ -8,16 +8,6 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.Title{
-    color: #98f3f3;
-    text-align: left;
-    margin-left: 10%;
-    font-family: MuseoModerno;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
 .tect{
     position: center;
     color: #FFF;
