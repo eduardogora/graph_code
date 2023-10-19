@@ -10,7 +10,7 @@ export default function Project_Card({data}) {
                 style={{ width: 240 , margin: "25px"}}
                 cover={<img alt={data.title} src= {data.img}  style={{height: "200px"}}/>}
             >
-                <Meta title={data.title} description="www.instagram.com" />
+                <Meta title={data.title} description={data.description} />
             </Card>
                 
             
