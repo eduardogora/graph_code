@@ -84,9 +84,9 @@ export default function AboutUs({data}) {
       { name: 'Coding', max: 10 },
       { name: 'Adobe', max: 10 },
       { name: '3D modeling', max: 10 },
-      { name: 'Name 1', max: 10 },
-      { name: 'Name 2', max: 10 },
-      { name: 'Name 3', max: 10 }
+      { name: 'RA', max: 10 },
+      { name: 'Videogames', max: 10 },
+      { name: 'Web', max: 10 }
     ];
     
       const [currentUser, setCurrentUser] = useState('1');
@@ -181,7 +181,7 @@ export default function AboutUs({data}) {
             <div>
 
                 <Card style={{margin: "100px 50px 50px 50px"}}>
-                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[0]}</Card.Grid>
                     <Card.Grid style={{width: "50%"}}>
                         <Image  
                         style={{width:"50%"}}
@@ -197,7 +197,7 @@ export default function AboutUs({data}) {
                         /> 
                     </Card.Grid>
                     
-                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[1]}</Card.Grid>
                 </Card>
 
                 <FloatButton.Group
@@ -228,7 +228,7 @@ export default function AboutUs({data}) {
                       </div>
                     </Card.Grid>
                     
-                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[0]}</Card.Grid>
                 </Card>
                 
                 <Carousel autoplay>

@@ -72,7 +72,7 @@ export default function MainPage() {
         },
         information: {
             eduardo: {
-                indicators: {art: [[5, 5, 5, 5, 5, 5,]], tech: [[6, 6, 6, 6, 6, 6,]]},
+                indicators: {art: [[10, 7, 9, 7, 5, 8,]], tech: [[10, 7, 2, 7, 9, 9,]]},
                 links: {facebook: "https://www.apple.com",
                               linkedin: "https://www.apple.com",
                               instagram: "https://www.apple.com",
@@ -80,9 +80,14 @@ export default function MainPage() {
                               cv: cve
                               },
                 Photos: {0: PerfilE, 1:SkillsE},
+                Info: {
+                    0: "Eduardo Sebastian Gonzales Ramirez: Systems Engineering student. Contact: eduardogoracedi@outlook.com                    ",
+                    1: "Leader of Sistematización: 2021 – Currently. Leader of “Sistematización” team inside the “Arte y Cultura” department at Universidad Panamericana. Using agile methodologies (scrum) to coordinate a web development team.",
+                    2: "SOFT SKILLS: Leadership, Adaptability capacity, Problem solution, Communication skills, Creativity"
+                }
             },
             team: {
-                indicators: {art: [[10, 10, 10, 10, 10, 10,]], tech: [[10, 10, 10, 10, 10, 10,]]},
+                indicators: {art: [[10, 9, 10, 10, 8, 6,]], tech: [[10, 10, 9, 7, 9, 8,]]},
                 links: {facebook: "https://www.google.com",
                         linkedin: "https://www.google.com",
                         instagram: "https://www.google.com",
@@ -90,9 +95,14 @@ export default function MainPage() {
                         cv: cvt
                         },
                 Photos: {0: PerfilT, 1:SkillsT},
+                Info: {
+                    0: "Graph Code: graphcodecv@gmail.com. Ingeniería en sistemas y graficas computacionales and Digital Animation Engineering",
+                    1: "Larana | Universidad Panamericana. 202-Present. Web Development, Python, javaScript, C++ / C# / C , Android Studio, Xcode, Adobe Photoshop, Illustrator, Premier , After Effects, Design, Drawing, Creativity, Teamwork, 3D Modeling, Commitment, Problem resolution",
+                    2: "SOFT SKILLS: Leadership, Adaptability capacity, Problem solution, Communication skills, Creativity"
+                }
             },
             natalia: {
-                indicators: {art: [[8, 8, 8, 8, 8, 8,]], tech: [[9, 9, 9, 9, 9, 9,]]},
+                indicators: {art: [[6, 9, 9, 10, 9, 3,]], tech: [[7, 10, 10, 7, 9, 6,]]},
                 links: {facebook: "https://www.behance.net/nataliaorozcoIAD",
                         linkedin: "https://www.linkedin.com/in/natalia-orozco-alvarado-407319271/",
                         instagram: "https://www.instagram.com/natalia.digital.art/",
@@ -100,6 +110,11 @@ export default function MainPage() {
                         cv: cvn
                         },
                 Photos: {0: PerfilN, 1:SkillsN},
+                Info: {
+                    0: "Natalia Orozco Alvarado: Digital Animation ENgineering student. Contact: natalia100c@hotmail.com",
+                    1: "Animator and Freelancer Desinger: 2021 – Currently. Logo design, Construction of, corporate identity, Packaging design  (Tequila Precepto ), Work in progress on , editorial illustration",
+                    2: "SOFT SKILLS: Leadership, Adaptability capacity, Problem solution, Communication skills, Creativity"
+                }
             },
         },
     }
