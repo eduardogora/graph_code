@@ -1,0 +1,52 @@
+.main_header-container{
+    display: grid;
+    margin-top: 5%;
+    position: relative;
+    align-items: left;
+    flex-direction: column;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main_header-left{
+    margin-top: -3rem;
+}
+
+.main_header-right{
+    display: fixed;
+    place-items: center;
+    position: relative;
+}
+
+.main_header-img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.MainHeader{
+    top: 15;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.text{
+    position: relative;
+    color: #FFF;
+    display: grid;
+    justify-content: center;
+    font-family: Abril Fatface;
+}
+
+.text2{
+    position: relative;
+    color: #229770;
+    display: grid;
+    justify-content: center;
+    font-style: bold;
+    font-family: Abril Fatface;
+    font-weight: 200;
+}

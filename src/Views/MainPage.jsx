@@ -2,6 +2,8 @@ import { useState } from "react"
 import Navbar from "../Components/Navbar/Navbar"
 import Projects from "./Projects";
 import AboutUs from "./AboutUs/AboutUs";
+import Home from "./Home/Home";
+import Person_Navbar from "../Components/Person_Navbar/Person_Navbar";
 import BottomCard from "../Components/BottomCard/BottomCard";
 import Home from "./Home/Home";
 import cve from "../Resources/Docs/cve.pdf"
@@ -70,9 +72,10 @@ export default function MainPage() {
     return(
         <div>
         <Navbar handleSelection = {handleSelection}/>
-        {currentSection == 0 ? (<Home/>) : null}
+        {/*currentSection == 1 || currentSection == 2 ? (<Person_Navbar/>) : null*/}
+        {currentSection == 0 ? (<Home data={data}  handleSelection = {handleSelection}/>) : null}
         {currentSection == 1 ? (<AboutUs data={data.information}/>) : null}
-        {currentSection == 2 ? (<Projects data={data.projects}/>) : null}
+        {currentSection == 2 ? (<Projects data={data.projects} person={'1'}/>) : null}
         {currentSection == 3 ? (<h1>Contact</h1>) : null}
         <BottomCard style={{position: "fixed", bottom: "0"}}/>
         </div>

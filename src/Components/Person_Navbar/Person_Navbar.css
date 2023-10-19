@@ -14,7 +14,7 @@
 }
 
 .navbar-personal{
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.685);
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;

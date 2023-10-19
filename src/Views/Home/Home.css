@@ -1,0 +1,86 @@
+.mainHome{
+    display: grid;
+    margin-top: 15%;
+    position: relative;
+    align-items: left;
+    flex-direction: column;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.Title{
+    color: #98f3f3;
+    text-align: left;
+    margin-left: 10%;
+    font-family: MuseoModerno;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.tect{
+    position: center;
+    color: #FFF;
+    display: grid;
+    justify-content: center;
+    font-family: Abril Fatface;
+}
+
+.btns{
+    display: grid;
+    position: left;
+    align-items: top;
+    flex-direction: column;
+    height: 100%;
+    grid-template-columns: 1.5fr 0fr 1fr;
+    z-index: 2;
+}
+
+.personBtnR{
+    display: grid;
+    place-items: right;
+    position: relative;
+    width: 150;
+    height: 200;
+}
+
+.banner{
+    position: relative;
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner h1{
+    position: relative;
+    color: #FFF;
+    display: flex;
+    width: 75%;
+    height: 50%;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Abril Fatface;
+    font-size: 30px;
+}
+
+.green-cover{
+    background-color: rgb(24, 95, 89);
+    height: 400px;
+    width: 250px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.box{
+    z-index: 1; 
+    margin: 0;
+    color: '#fff';
+    text-align: 'center';
+    background: '#364d79';
+}
+
+.carruselImg{
+    width: 20%;
+    height: 100%;
+}
