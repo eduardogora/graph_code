@@ -1,5 +1,5 @@
 import React from 'react';
-import './Paralax.css';
+import './Parallax.css';
 import { Button } from "antd"
 import { Link, Element } from 'react-scroll';
 import {  DownOutlined, UpOutlined } from '@ant-design/icons';
