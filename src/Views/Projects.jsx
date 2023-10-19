@@ -1,11 +1,8 @@
-import {motion} from "framer-motion"
 import { useState } from "react"
-import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
 import { Slider, Row, Col } from 'antd';
 import Person_Navbar from "../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
-import { Padding } from "@mui/icons-material";
 import Project_Card from "../Components/Project_Card/Project_Card";
 
 export default function Projects({data}) {

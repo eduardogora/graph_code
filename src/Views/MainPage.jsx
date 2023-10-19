@@ -1,11 +1,11 @@
-import {motion} from "framer-motion"
 import { useState } from "react"
-import LoadingAnim from "../Components/Loading/LoadingAnim"
 import Navbar from "../Components/Navbar/Navbar"
 import Projects from "./Projects";
 import AboutUs from "./AboutUs/AboutUs";
-import Person_Navbar from "../Components/Person_Navbar/Person_Navbar";
 import BottomCard from "../Components/BottomCard/BottomCard";
+import Home from "./Home/Home";
+import cve from "../Resources/Docs/cve.pdf"
+import cvn from "../Resources/Docs/cvn.jpeg"
 
 export default function MainPage() {
 
@@ -36,7 +36,8 @@ export default function MainPage() {
                 links: {facebook: "https://www.apple.com",
                               linkedin: "https://www.apple.com",
                               instagram: "https://www.apple.com",
-                              github: "https://www.apple.com"
+                              github: "https://www.apple.com",
+                              cv: cve
                               },
             },
             team: {
@@ -44,7 +45,8 @@ export default function MainPage() {
                 links: {facebook: "https://www.google.com",
                         linkedin: "https://www.google.com",
                         instagram: "https://www.google.com",
-                        github: "https://www.google.com"
+                        github: "https://www.google.com",
+                        cv: cve
                         }
             },
             natalia: {
@@ -52,7 +54,8 @@ export default function MainPage() {
                 links: {facebook: "https://www.youtube.com",
                         linkedin: "https://www.youtube.com",
                         instagram: "https://www.youtube.com",
-                        github: "https://www.youtube.com"
+                        github: "https://www.youtube.com",
+                        cv: cvn
                         }
             },
         },
@@ -67,8 +70,7 @@ export default function MainPage() {
     return(
         <div>
         <Navbar handleSelection = {handleSelection}/>
-        {/*currentSection == 1 || currentSection == 2 ? (<Person_Navbar/>) : null*/}
-        {currentSection == 0 ? (<h1>Main Page</h1>) : null}
+        {currentSection == 0 ? (<Home/>) : null}
         {currentSection == 1 ? (<AboutUs data={data.information}/>) : null}
         {currentSection == 2 ? (<Projects data={data.projects}/>) : null}
         {currentSection == 3 ? (<h1>Contact</h1>) : null}

@@ -18,11 +18,10 @@ function App() {
 
   return (
     <div className="App">
-      {/*showComponent1 ? 
+      {showComponent1 ? 
       (<MainPage/>):
       (<Loading/>)
-  */}
-    {<MainPage/>}
+      }
     </div>
   );
 }

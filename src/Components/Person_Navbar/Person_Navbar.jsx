@@ -1,7 +1,5 @@
-import { Menu, Affix, Col } from "antd"
-import { useState } from "react";
+import { Menu } from "antd"
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import logo from "../../Resources/Images/logo.png"
 import "./Person_Navbar.css";
 
 export default function Person_Navbar({handleSelection, current}) {

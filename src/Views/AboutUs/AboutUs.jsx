@@ -1,12 +1,9 @@
-import {motion} from "framer-motion"
 import { useState } from "react"
-import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, } from '@ant-design/icons';
-import { Slider, Row, Col, Card, Image, Carousel, FloatButton, Switch, Affix  } from 'antd';
+import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
+import { Card, Image, Carousel, FloatButton, Switch } from 'antd';
 import Person_Navbar from "../../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
-import {Padding } from "@mui/icons-material";
-import Project_Card from "../../Components/Project_Card/Project_Card";
 import "./AboutUs.css";
 import ReactECharts from 'echarts-for-react';
 
@@ -110,7 +107,6 @@ export default function AboutUs({data}) {
       },
       radar: {
         indicator: CurrentIndicators,
-        //shape: 'circle',
         splitNumber: 5,
         axisName: {
           color: 'rgb(238, 197, 102)'
@@ -189,13 +185,13 @@ export default function AboutUs({data}) {
                 type="primary"
                 style={{ right: 24}}
                 icon={<MessageOutlined />}
-                /*description={currentUser === "0" ? "Eduard" : currentUser === '1' ? "EN" : "Natalia"}*/
       
                 >
                 <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank" tooltip="Linkedin"/>
                 <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Facebook"/>
                 <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank" tooltip="Instagram"/>
                 <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank" tooltip="Github"/>
+                <FloatButton icon={<UserOutlined />} href={CurrentInfo.links.cv} target="_blank" tooltip="CV"/>
             </FloatButton.Group>
 
             <Card style={{margin: "50px"}}>

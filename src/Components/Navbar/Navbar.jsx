@@ -15,7 +15,7 @@ export default function Navbar({handleSelection}) {
     return(
         <Affix offsetTop={0}>
             <Col span={24}>
-                <Menu /*onClick={onClick} selectedKeys={[current]}*/ 
+                <Menu 
                     mode="horizontal" 
                     style={{position: "relative", top: "0px", width:"100%", background: "rgba(0,109,103,255)", height:"100px"}}>
                     <Menu.Item key="logo" style={{width:"10%"}} onClick={() => handleSelection(0)}>
@@ -30,10 +30,6 @@ export default function Navbar({handleSelection}) {
                     <Menu.Item key="projects" style={{width:"20%"}} onClick={() => handleSelection(2)}>
                         <h1 style={{textAlign: "center"}}>Projects</h1>
                     </Menu.Item>
-                    {/*
-                    <Menu.Item key="contact" className="navbar-button" onClick={() => handleSelection(3)}>
-                        <h1>Contact</h1>
-                    </Menu.Item>*/}
                 </Menu>
             </Col>
 
