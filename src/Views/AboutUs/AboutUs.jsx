@@ -8,7 +8,10 @@ import "./AboutUs.css";
 import ReactECharts from 'echarts-for-react';
 import LoadingAboutusAnim from "../../Components/Loading/LoadingAboutusAnim";
 import BottomCard from "../../Components/BottomCard/BottomCard";
-
+import paint from "../../Resources/ProjectsImg/Paint2.jpeg";
+import piramide from "../../Resources/ProjectsImg/Piramide.jpg";
+import Endepedia from "../../Resources/ProjectsImg/Endepedia.jpg";
+import Endep from "../../Resources/ProjectsImg/Endep.jpg";
 
 
 export default function AboutUs({data}) {
@@ -182,7 +185,7 @@ export default function AboutUs({data}) {
                     <Card.Grid style={{width: "50%"}}>
                         <Image  
                         style={{width:"50%"}}
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        src={CurrentInfo.Photos[0]}
                         /> 
                     </Card.Grid>
                 </Card>
@@ -190,7 +193,7 @@ export default function AboutUs({data}) {
                     <Card.Grid style={{width: "50%"}}>
                         <Image  
                         style={{width:"50%"}}
-                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        src={CurrentInfo.Photos[1]}
                         /> 
                     </Card.Grid>
                     
@@ -230,16 +233,16 @@ export default function AboutUs({data}) {
                 
                 <Carousel autoplay>
                     <div>
-                    <h3 className="content-style" >1</h3>
+                    <Image src={paint}/>
                     </div>
                     <div>
-                    <h3 className="content-style">2</h3>
+                    <Image src={piramide}/>
                     </div>
                     <div>
-                    <h3 className="content-style">3</h3>
+                    <Image src={Endepedia}/>
                     </div>
                     <div>
-                    <h3 className="content-style">4</h3>
+                    <Image src={Endep}/>
                     </div>
                 </Carousel>
                 
