@@ -19,8 +19,9 @@ export default function MainPage() {
                 {title: "Proyecto 4", description: "Es una descripción2", img: "", category: 2},
             ],
             team: [
-                {title: "Proyecto 1", description: "Es una descripción1", img: "", category: 0},
-                {title: "Proyecto 2", description: "Es una descripción2", img: "", category: 2},
+                {title: "Endepedia", description: "Es una descripción1", img: "", category: 2},
+                {title: "AyC site", description: "Es una descripción2", img: "", category: 2},
+                {title: "Dualidad", description: "Es una descripción2", img: "", category: 0},
             ],
             natalia: [
                 {title: "Proyecto 1", description: "Es una descripción1", img: "", category: 2},
