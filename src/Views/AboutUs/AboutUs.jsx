@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { LinkedinOutlined, FacebookOutlined, InstagramOutlined,GithubOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons';
 import { Card, Image, Carousel, FloatButton, Switch } from 'antd';
 import Person_Navbar from "../../Components/Person_Navbar/Person_Navbar";
@@ -6,14 +6,27 @@ import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
 import "./AboutUs.css";
 import ReactECharts from 'echarts-for-react';
+import LoadingAboutusAnim from "../../Components/Loading/LoadingAboutusAnim";
+import BottomCard from "../../Components/BottomCard/BottomCard";
 
 
 
 export default function AboutUs({data}) {
 
-    /*
-    Category - 0 -Art | 1 - Both | 2 - Art
-    */
+  const [loading, setLoading] = useState(true);
+  /*
+  Category - 0 -Art | 1 - Both | 2 - Art
+  */
+
+
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+          setLoading(false);
+
+      }, 10000);
+  
+      return () => clearTimeout(timeoutId);
+    }, []);
 
     const handleSelection = (e) => {
         setCurrentUser(e.key);
@@ -153,80 +166,89 @@ export default function AboutUs({data}) {
     
     return(
         <div>
-
-        <div style={{position: "fixed", width: "100%", zIndex: "1000", marginTop:"-104px"}}>
-            <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
-        </div>
         
-        <div>
+          {!loading 
+          ? (
+            <div>
 
-            <Card style={{margin: "100px 50px 50px 50px"}}>
-                <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
-                <Card.Grid style={{width: "50%"}}>
-                    <Image  
-                    style={{width:"50%"}}
-                    src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                    /> 
-                </Card.Grid>
-            </Card>
-            <Card style={{margin: "50px"}}>
-                <Card.Grid style={{width: "50%"}}>
-                    <Image  
-                    style={{width:"50%"}}
-                    src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-                    /> 
-                </Card.Grid>
-                
-                <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
-            </Card>
-
-            <FloatButton.Group
-                trigger="hover"
-                type="primary"
-                style={{ right: 24}}
-                icon={<MessageOutlined />}
-      
-                >
-                <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank" tooltip="Linkedin"/>
-                <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Facebook"/>
-                <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank" tooltip="Instagram"/>
-                <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank" tooltip="Github"/>
-                <FloatButton icon={<UserOutlined />} href={CurrentInfo.links.cv} target="_blank" tooltip="CV"/>
-            </FloatButton.Group>
-
-            <Card style={{margin: "50px"}}>
-                <Card.Grid style={{width: "50%"}}>
-                  <ReactECharts  
-                  option={option}
-                  style={{ height: '500px' }}
-                  />
-                  <div className="icon-wrapper" style={{display: 'flex', justifyContent: 'center'}}>
-                    <BrushIcon style={{margin: "10px 10px 0px 0px"}}/>
-                      <Switch onChange={handleIndicatorsChange} style={{marginTop: "10px"}}/>
-                    <ComputerIcon style={{margin: "10px 0px 0px 10px"}}/>
-
-                  </div>
-                </Card.Grid>
-                
-                <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
-            </Card>
+            <div style={{position: "fixed", width: "100%", zIndex: "1000", marginTop:"-104px"}}>
+                <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
+            </div>
             
-            <Carousel autoplay>
-                <div>
-                <h3 className="content-style" >1</h3>
-                </div>
-                <div>
-                <h3 className="content-style">2</h3>
-                </div>
-                <div>
-                <h3 className="content-style">3</h3>
-                </div>
-                <div>
-                <h3 className="content-style">4</h3>
-                </div>
-            </Carousel>
-            
+            <div>
+
+                <Card style={{margin: "100px 50px 50px 50px"}}>
+                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                    <Card.Grid style={{width: "50%"}}>
+                        <Image  
+                        style={{width:"50%"}}
+                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        /> 
+                    </Card.Grid>
+                </Card>
+                <Card style={{margin: "50px"}}>
+                    <Card.Grid style={{width: "50%"}}>
+                        <Image  
+                        style={{width:"50%"}}
+                        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                        /> 
+                    </Card.Grid>
+                    
+                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                </Card>
+
+                <FloatButton.Group
+                    trigger="hover"
+                    type="primary"
+                    style={{ right: 24}}
+                    icon={<MessageOutlined />}
+          
+                    >
+                    <FloatButton icon={<LinkedinOutlined />} href={CurrentInfo.links.linkedin} target="_blank" tooltip="Linkedin"/>
+                    <FloatButton icon={<FacebookOutlined />} href= {CurrentInfo.links.facebook} target="_blank" tooltip="Facebook"/>
+                    <FloatButton icon={<InstagramOutlined />} href={CurrentInfo.links.instagram} target="_blank" tooltip="Instagram"/>
+                    <FloatButton icon={<GithubOutlined />} href={CurrentInfo.links.github} target="_blank" tooltip="Github"/>
+                    <FloatButton icon={<UserOutlined />} href={CurrentInfo.links.cv} target="_blank" tooltip="CV"/>
+                </FloatButton.Group>
+
+                <Card style={{margin: "50px"}}>
+                    <Card.Grid style={{width: "50%"}}>
+                      <ReactECharts  
+                      option={option}
+                      style={{ height: '500px' }}
+                      />
+                      <div className="icon-wrapper" style={{display: 'flex', justifyContent: 'center'}}>
+                        <BrushIcon style={{margin: "10px 10px 0px 0px"}}/>
+                          <Switch onChange={handleIndicatorsChange} style={{marginTop: "10px"}}/>
+                        <ComputerIcon style={{margin: "10px 0px 0px 10px"}}/>
+
+                      </div>
+                    </Card.Grid>
+                    
+                    <Card.Grid style={{width: "50%"}}>Ingresar Aqui la info</Card.Grid>
+                </Card>
+                
+                <Carousel autoplay>
+                    <div>
+                    <h3 className="content-style" >1</h3>
+                    </div>
+                    <div>
+                    <h3 className="content-style">2</h3>
+                    </div>
+                    <div>
+                    <h3 className="content-style">3</h3>
+                    </div>
+                    <div>
+                    <h3 className="content-style">4</h3>
+                    </div>
+                </Carousel>
+                
+                <BottomCard style={{position: "fixed", bottom: "0"}}/>
+                
+            </div>
         </div>
+          ) 
+          : <LoadingAboutusAnim/>}
       </div>
     )
 }

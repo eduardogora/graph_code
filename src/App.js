@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Loading from './Views/loading';
 import MainPage from './Views/MainPage';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 function App() {

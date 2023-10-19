@@ -22,7 +22,7 @@ export default function MainPage() {
                 {title: "Endepedia", description: "Es una descripción1", img: "", category: 2},
                 {title: "AyC site", description: "Es una descripción2", img: "", category: 2},
                 {title: "Dualidad", description: "Es una descripción2", img: "", category: 0},
-                {title: "Dualidad", description: "Es una descripción2", img: "", category: 0},
+                {title: "Tett", description: "Es una descripción2", img: "", category: 0},
             ],
             natalia: [
                 {title: "Proyecto 1", description: "Es una descripción1", img: "", category: 2},
@@ -77,7 +77,6 @@ export default function MainPage() {
         {currentSection == 1 ? (<AboutUs data={data.information}/>) : null}
         {currentSection == 2 ? (<Projects data={data.projects} person={'1'}/>) : null}
         {currentSection == 3 ? (<h1>Contact</h1>) : null}
-        <BottomCard style={{position: "fixed", bottom: "0"}}/>
         </div>
     )
 }

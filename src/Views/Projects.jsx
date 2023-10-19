@@ -1,15 +1,27 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Slider, Row, Col } from 'antd';
 import Person_Navbar from "../Components/Person_Navbar/Person_Navbar";
 import BrushIcon from '@mui/icons-material/Brush';
 import ComputerIcon from '@mui/icons-material/Computer';
 import Project_Card from "../Components/Project_Card/Project_Card";
+import LoadingProjectAnim from "../Components/Loading/LoadingProjectAnim";
+import BottomCard from "../Components/BottomCard/BottomCard";
 
 export default function Projects({data,person}) {
-
+    const [loading, setLoading] = useState(true);
     /*
     Category - 0 -Art | 1 - Both | 2 - Art
     */
+
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setLoading(false);
+
+        }, 10000);
+    
+        return () => clearTimeout(timeoutId);
+      }, []);
     
     
     const [currentUser, setCurrentUser] = useState(person);
@@ -39,39 +51,49 @@ export default function Projects({data,person}) {
 
     return(
         <div>
-            <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
-            <div className="icon-wrapper" style={{display: 'flex', justifyContent: 'center'}}>
-                <BrushIcon style={{margin: "7px"}}/>
-                    <Slider onChange={setValue} 
-                            value={value} marks={marks} 
-                            step={null} 
-                            defaultValue={1} 
-                            min={0} 
-                            max={2} 
-                            range={true} 
-                            included={false}
-                            style={{width: "10%", alignContent:"center"}}
-                            tooltip={{ formatter: null }}/>
-                <ComputerIcon style={{margin: "7px"}}/>
-            </div>
-            <Row>
-            {value !== 1 ? (
-                currentData.map((project) => (
-                project.category == value ? ( 
-                <Col key={project.title} span={4}>
+            {!loading 
+            ? (
+                <div>
+                <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
+                <div className="icon-wrapper" style={{display: 'flex', justifyContent: 'center'}}>
+                    <BrushIcon style={{margin: "7px"}}/>
+                        <Slider onChange={setValue} 
+                                value={value} marks={marks} 
+                                step={null} 
+                                defaultValue={1} 
+                                min={0} 
+                                max={2} 
+                                range={true} 
+                                included={false}
+                                style={{width: "10%", alignContent:"center"}}
+                                tooltip={{ formatter: null }}/>
+                    <ComputerIcon style={{margin: "7px"}}/>
+                </div>
+                <Row>
+                {value !== 1 ? (
+                    currentData.map((project) => (
+                    project.category == value ? ( 
+                    <Col key={project.title} span={4}>
+                        <Project_Card data={project}/>
+                    </Col>) 
+                    : value == 1 ?
+                    (<Col key={project.title} span={4}>
                     <Project_Card data={project}/>
-                </Col>) 
-                : value == 1 ?
-                (<Col key={project.title} span={4}>
-                <Project_Card data={project}/>
-                </Col>)  
-                 : null
+                    </Col>)  
+                    : null
+                    
+                ))
+                )
+                : null   
+                }
+                </Row>
                 
-            ))
-            )
-            : null   
-            }
-            </Row>
+                <BottomCard style={{position: "fixed", bottom: "0"}}/>
+            </div>
+            ) 
+            : <LoadingProjectAnim/>}
+            
+            
             
         </div>
     )
