@@ -69,9 +69,9 @@ export default function MainPage() {
         <div>
         <Navbar handleSelection = {handleSelection}/>
         {/*currentSection == 1 || currentSection == 2 ? (<Person_Navbar/>) : null*/}
-        {currentSection == 0 ? (<h1>Main Page</h1>) : null}
+        {currentSection == 0 ? (<Home data={data}  handleSelection = {handleSelection}/>) : null}
         {currentSection == 1 ? (<AboutUs data={data.information}/>) : null}
-        {currentSection == 2 ? (<Projects data={data.projects}/>) : null}
+        {currentSection == 2 ? (<Projects data={data.projects} person={'1'}/>) : null}
         {currentSection == 3 ? (<h1>Contact</h1>) : null}
         <BottomCard style={{position: "fixed", bottom: "0"}}/>
         </div>

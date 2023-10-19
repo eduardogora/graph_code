@@ -12,3 +12,32 @@
     margin: 10px 0 ;
     text-align: center ;
 }
+
+.aligneNav{
+    display: flex;
+    margin-top: -5px;
+    position: fixed;
+    align-items: center;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+.Title{
+    color: #98f3f3;
+    text-align: left;
+    margin-left: 10%;
+    font-family: MuseoModerno;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.Title1{
+    color: #4eb6b6;
+    text-align: left;
+    margin-left: 10%;
+    font-family: MuseoModerno;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

@@ -1,21 +1,36 @@
+import "./Home.css";
 import React from 'react';
-import { Carousel } from 'antd';
+import {Button, Image, Carousel } from 'antd';
+import { useState } from "react"
+import Header from "../../Components/HomeHeader/Header"
+import img from "../../Resources/Images/persona.png"
+import Parallax1 from "../../Resources/Images/Paralax1.png"
+import Parallax2 from "../../Resources/Images/Paralax2.png"
+import Projects from "../../Views/Projects";
+import Parallax from "../../Components/Parallax/paralax";
 
-export default function Home(){
+import headerHome from "../../Resources/Images/headerHome.png"
+import { right } from "@popperjs/core";
+
+export default function Home({data},{handleSelection}){
+    
+    const [currentSection, setCurrentSection] = useState(0);
     return(
-        <Carousel autoplay>
+        <div >
+            <Header></Header>
             <div>
-            <h3>1</h3>
+                <Parallax image={Parallax1}/>
+                <Parallax image={Parallax1}/>
+                <Parallax image={Parallax2}/>
             </div>
-            <div>
-            <h3>2</h3>
-            </div>
-            <div>
-            <h3>3</h3>
-            </div>
-            <div>
-            <h3>4</h3>
-            </div>
-        </Carousel>
+                {/*<div className="btns">
+                    <Button style={{width: "150px", height: '200px'}} type="text" onClick={() => <Projects data={data.projects} person={'1'}/> }>
+                        <Image width={150} height={200} src={img} preview={false}/>
+                    </Button>
+                    <Button style={{width: "150px", height: '200px'}} type="text" onClick={() => <Projects data={data.projects} person={'1'}/> }>
+                        <Image width={150} height={200} src={img} preview={false}/>
+                    </Button>
+                    </div>*/}
+        </div>
     )
 }

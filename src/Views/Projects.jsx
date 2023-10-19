@@ -8,14 +8,14 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import { Padding } from "@mui/icons-material";
 import Project_Card from "../Components/Project_Card/Project_Card";
 
-export default function Projects({data}) {
+export default function Projects({data,person}) {
 
     /*
     Category - 0 -Art | 1 - Both | 2 - Art
     */
     
     
-    const [currentUser, setCurrentUser] = useState('1');
+    const [currentUser, setCurrentUser] = useState(person);
     const [currentData, setCurrentData] = useState(data.team);
     
     const [value, setValue] = useState(1);

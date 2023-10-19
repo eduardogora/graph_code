@@ -158,7 +158,7 @@ export default function AboutUs({data}) {
     return(
         <div>
 
-        <div style={{position: "fixed", width: "100%", zIndex: "1000", marginTop:"-100px"}}>
+        <div style={{position: "fixed", width: "100%", zIndex: "1000", marginTop:"-104px"}}>
             <Person_Navbar handleSelection={handleSelection} current={currentUser}/>
         </div>
         
