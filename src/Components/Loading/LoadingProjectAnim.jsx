@@ -20,22 +20,14 @@ export default function LoadingProjectAnim() {
     //Animation
 
     //Colors
-    /*const pC = "#a066cc";
+    const pC = "#a066cc";
     const rC = "#7bb399";
     const oC = "#f0f8ff";
     const jC = "#ff4f61";
     const eC = "#f2cb61";
     const cC = "#ceeb7f";
     const tC = "#8fe3aa";
-    const sC = "#e3a3ff";*/
-    const pC = "#f0f8ff";
-    const rC = "#f0f8ff";
-    const oC = "#f0f8ff";
-    const jC = "#f0f8ff";
-    const eC = "#f0f8ff";
-    const cC = "#f0f8ff";
-    const tC = "#f0f8ff";
-    const sC = "#f0f8ff";
+    const sC = "#e3a3ff";
     const stroke = 15;
     var numLetra = 0;
     return (

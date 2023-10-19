@@ -23,12 +23,12 @@ export default function LoadingAboutusAnim() {
     var numLetra = 0;
 
     const col1 = "#00cc88";
-    const col2 = "#fcba03";
-    const col3 = "#00cc88";
-    const col4 = "#00cc88";
-    const col5 = "#00cc88";
-    const col6 = "#00cc88";
-    const col7 = "#00cc88";
+    const col2 = "#7bb399";
+    const col3 = "#f0f8ff";
+    const col4 = "#ff4f61";
+    const col5 = "#f2cb61";
+    const col6 = "#8fe3aa";
+    const col7 = "#e3a3ff";
 
     return (
         <div className="anim1">

@@ -181,7 +181,7 @@ export default function AboutUs({data}) {
             <div>
 
                 <Card style={{margin: "100px 50px 50px 50px"}}>
-                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[0]}</Card.Grid>
+                    <Card.Grid className="Titulo1" style={{width: "50%"}}>{CurrentInfo.Info[0]}</Card.Grid>
                     <Card.Grid style={{width: "50%"}}>
                         <Image  
                         style={{width:"50%"}}
@@ -197,7 +197,7 @@ export default function AboutUs({data}) {
                         /> 
                     </Card.Grid>
                     
-                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[1]}</Card.Grid>
+                    <Card.Grid className="Titulo1" style={{width: "50%"}}>{CurrentInfo.Info[1]}</Card.Grid>
                 </Card>
 
                 <FloatButton.Group
@@ -228,7 +228,7 @@ export default function AboutUs({data}) {
                       </div>
                     </Card.Grid>
                     
-                    <Card.Grid style={{width: "50%"}}>{CurrentInfo.Info[0]}</Card.Grid>
+                    <Card.Grid className="Titulo1" style={{width: "50%"}}>{CurrentInfo.Info[2]}</Card.Grid>
                 </Card>
                 
                 <Carousel autoplay>
