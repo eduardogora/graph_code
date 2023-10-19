@@ -16,7 +16,7 @@ export default function Navbar({handleSelection}) {
     return(
         <Affix offsetTop={0}>
             <Col span={24}>
-                <Menu  className="aligneNav" /*onClick={onClick} selectedKeys={[current]}*/ 
+                <Menu  className="aligneNav" 
                     mode="horizontal" 
                     style={{position: "relative", top: "0px", width:"100%", background: "rgba(0,109,103,255)", height:"100px"}}>
                     <Menu.Item key="logo" style={{width:"10%"}} onClick={() => handleSelection(0)}>

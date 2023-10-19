@@ -2,8 +2,6 @@ import { useState } from "react"
 import Navbar from "../Components/Navbar/Navbar"
 import Projects from "./Projects";
 import AboutUs from "./AboutUs/AboutUs";
-import Home from "./Home/Home";
-import Person_Navbar from "../Components/Person_Navbar/Person_Navbar";
 import BottomCard from "../Components/BottomCard/BottomCard";
 import Home from "./Home/Home";
 import cve from "../Resources/Docs/cve.pdf"
