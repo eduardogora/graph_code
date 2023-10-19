@@ -14,14 +14,15 @@ const Parallax = ({ image, caption, parNum }) => {
 
 
       <Link
-          to= {parNum == 2 ? "par0" : "par" + (parNum + 1)} // Este debe ser el identificador único de la siguiente sección
+          to= {parNum == 2 ? "par0" : "par" + (parNum + 2)} // Este debe ser el identificador único de la siguiente sección
           spy={true}
           smooth={true}
           offset={-70}
           duration={500}
           className="scroll-down-button"
         >
-          <Button> {parNum == 2 ? <UpOutlined/> : <DownOutlined/>} </Button>
+          {parNum !== 1 ? <Button> {parNum == 2 ? <UpOutlined/> : <DownOutlined/>} </Button> : null}
+          
         </Link>
 
       <div className="caption">{caption}</div>
